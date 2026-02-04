@@ -1,0 +1,8 @@
+<div class="forAllImages">
+    @for(image of allImagesList; track image){
+        <div>
+            <button (click)="openImage(image.id)">Open {{image.id}}</button>
+            <img src="" alt="">
+        </div>
+    }
+</div>

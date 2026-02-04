@@ -1,0 +1,109 @@
+:host {
+    margin: 0;
+    background-color: rgb(60,103,96);//применить на фон
+    color: white;
+    font-weight: bold;
+    font-size: 3vh;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.forAuth{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin:  auto;
+    border-radius: 20px;
+    border: none;
+    padding: 1%;
+    background-color: rgb(80,115,111);
+    text-align: center;
+}
+
+input {
+    background-color: rgb(80,115,111);
+    border:1px solid white;
+    border-radius: 10px;
+    margin: 1% auto;
+    height: 4vh;
+    width: 60%;
+    color: white;
+}
+
+input:focus{
+    outline: none;
+}
+
+input::placeholder {
+    color: #b8b8b8;
+    opacity: 1;
+}
+
+button {
+    background-color: white;
+    border:none;
+    border-radius: 20px;
+    width: 25%;
+    height: 6vh;
+    margin: 0.5% auto 2% auto ;
+    cursor: pointer;
+    color: rgb(80,115,111);
+    font-weight: bold;
+}
+
+.forIf{
+    margin: auto;
+    font-size: 4vh;
+}
+
+.forValidString{
+    height: 3vh;
+    padding: 0;
+    margin: 0;
+    font-size: 2vh;
+    color: red;
+}
+
+@media screen and (min-width: 901px) {
+
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    button {
+        border-radius: 20px;
+        height: 4vh;
+        width: 40%;
+    }
+    .forIf{
+        margin: auto;
+        font-size: 3vh;
+    }
+}
+
+@media (max-width: 601px) {
+    :host {
+        font-size: 1.4vh;
+    }
+
+    button {
+        border:none;
+        border-radius: 10px;
+        margin: 1% auto 3% auto ;
+        height: 4vh;
+        width: 60%;
+        box-sizing: content-box;
+        font-size: 1.4vh;
+    }
+
+    .forIf{
+        font-size: 2vh;
+    }
+
+    input::placeholder {
+        font-size: 1.4vh;
+}
+
+}
