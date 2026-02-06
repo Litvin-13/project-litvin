@@ -11,8 +11,8 @@
     }
     </p>
     <p class="forValidString"> @if(
-    authForm.controls['regPassword'].valid&&authForm.controls['regPassword'].dirty
-    ||authForm.controls['regPassword2'].valid&&authForm.controls['regPassword2'].dirty){   
+    authForm.controls['regPassword'].invalid&&authForm.controls['regPassword'].dirty
+    ||authForm.controls['regPassword2'].invalid&&authForm.controls['regPassword2'].dirty){   
         Коротний пароль
     }
     </p>

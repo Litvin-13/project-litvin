@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { validate } from '@angular/forms/signals';
@@ -20,7 +21,7 @@ export class Auth {
   }
 
   passwordsValid:ValidatorFn = (control:AbstractControl):ValidationErrors|null=>{
-    return control.value.length<10?null:{PasswordLength:true};
+    return control.value.length>10?null:{PasswordLength:true};
   }
 
   authForm:FormGroup = new FormGroup({
@@ -37,12 +38,16 @@ export class Auth {
   userName=this.authForm.controls['userName']
   userPassword=this.authForm.controls['userPassword']
 
+  newUser:IUser = {
+    name:'',
+    password:''
+  }
   addNewUser(){    
-    const newUser:IUser={
+    this.newUser={
       name:this.authForm.controls['regName'],
       password:this.regPassword,
     }  
-    console.log(newUser);   
+    console.log(this.newUser)
   }
 
   enterUser(){
