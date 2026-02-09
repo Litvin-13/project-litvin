@@ -1,0 +1,30 @@
+<form [formGroup]="authForm" novalidate class="forAuth">
+    <p class="forIf">Если вы новый посетитель:</p>
+    <label for="regName" >Введите имя</label>
+    <input type="text" formControlName="regName" id="regName" placeholder="Name" >
+    <label for="regPassword">Придумайте пароль</label>
+    <input type="password" formControlName="regPassword" id="regPassword" placeholder="Password">
+    <label for="regPassword" placeholder="Password">Повторите пароль</label>
+    <input type="password" formControlName="regPassword2" id="regPassword" placeholder="Password">
+    <p class="forValidString"> @if(authForm.errors?.['PasswordError']){   
+        Пароли должны быть одинаковые
+    }
+    </p>
+    <p class="forValidString"> @if(
+    authForm.controls['regPassword'].invalid&&authForm.controls['regPassword'].dirty
+    ||authForm.controls['regPassword2'].invalid&&authForm.controls['regPassword2'].dirty){   
+        Коротний пароль
+    }
+    </p>
+    <button (click)="addNewUser()">Зарегистрироваться</button>
+    <p class="forIf">Если есть учетная запись:</p>
+    <label for="userName">Введите имя</label>
+    <input type="text" formControlName="userName" id="userName" placeholder="Name">
+    <label for="userPassword">Введите пароль</label>
+    <input type="password" formControlName="userPassword" id="userPassword" placeholder="Password">
+    <p class="forValidString"> @if(authForm.controls['userPassword'].valid&&authForm.controls['userPassword'].dirty){   
+        Коротний пароль
+    }
+    </p>
+    <button (click)="enterUser()">Войти</button>
+</form>
